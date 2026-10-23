@@ -19,7 +19,7 @@
 
 **Omniflux** is an extensible personal AI assistant framework designed for true local-first intelligence with seamless cloud fallback. It provides unified orchestration across local hardware (Ollama, vLLM, Apple MLX, llama.cpp) and frontier cloud models (OpenAI, Anthropic Claude, Google Gemini, OpenRouter), giving you full control over privacy, latency, energy, and costs.
 
-```
+```text
                   ┌────────────────────────────────────────┐
                   │          Omniflux Core Gateway          │
                   │   (CLI · REST API · Desktop / Web GUI)  │
@@ -89,14 +89,17 @@ jarvis doctor
 ### 3. Launching Interfaces
 
 #### Option A: Graphical Web & Desktop GUI
+
 Start the OpenAI-compatible backend and launch the responsive frontend interface:
 
 ```bash
 jarvis gui
 ```
+
 *Or visit [http://127.0.0.1:5173/](http://127.0.0.1:5173/) once running.*
 
 #### Option B: Terminal Interactive Chat
+
 Engage directly with the agent from your command line:
 
 ```bash
@@ -104,11 +107,13 @@ jarvis chat
 ```
 
 #### Option C: Headless API Server
+
 Start the background daemon exposing standard OpenAI-compatible endpoints (`/v1/chat/completions`):
 
 ```bash
 jarvis serve --host 127.0.0.1 --port 8000
 ```
+
 Interactive OpenAPI documentation will be accessible at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
 ---
@@ -133,6 +138,7 @@ Omniflux includes specialized agents tailored for different workflows:
 ## 🔒 Security & Privacy Model
 
 Omniflux enforces verified security boundaries to protect local systems and private data:
+
 1. **Local Isolation**: Conversation history, semantic vectors, and traces remain in local SQLite databases by default (`~/.openjarvis/`).
 2. **Encrypted Credential Vault**: Sensitive API tokens and keys are encrypted at rest with hardware-backed or key-derived AES protection.
 3. **Execution Sandboxing**: Subprocess tools run inside isolated subprocess environments with AST parsing to eliminate arbitrary code injection risks.

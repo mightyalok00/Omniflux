@@ -8,7 +8,7 @@ Omniflux is designed from the ground up as a **local-first personal AI assistant
 
 Omniflux enforces strict security boundaries between user credentials, model inference, external network interfaces, and tool executions.
 
-```
+```text
        ┌─────────────────────────────────────────────────────────────────┐
        │                       Host Environment                          │
        │                                                                 │
@@ -40,7 +40,7 @@ Omniflux enforces strict security boundaries between user credentials, model inf
 Every defense layer in Omniflux is covered by dedicated adversarial test suites:
 
 | Security Domain | Defense Mechanism | Test Suite & Evidence |
-|---|---|---|
+| --- | --- | --- |
 | **Prompt Injection** | Multi-layer heuristic & semantic injection scanner analyzing input prompts before agent execution. | [`tests/security/test_injection_scanner.py`](tests/security/test_injection_scanner.py) |
 | **SSRF Defense** | Validates, resolves, and blocks loopback, link-local, private cloud metadata (169.254.169.254), and disguised hex/octal IPs. | [`tests/security/test_ssrf.py`](tests/security/test_ssrf.py)<br>[`tests/security/test_ssrf_disguised.py`](tests/security/test_ssrf_disguised.py) |
 | **Tool Execution Sandbox** | Dynamic Python and shell tools run with AST security inspection, restricted builtins, and path traversal guards. | [`tests/security/test_subprocess_sandbox.py`](tests/security/test_subprocess_sandbox.py)<br>[`tests/tools/test_template_loader_security.py`](tests/tools/test_template_loader_security.py) |
@@ -70,6 +70,7 @@ credential_vault = true
 ## 🛡️ Static Analysis & CI Verification
 
 The repository enforces continuous static application security testing (SAST) on every pull request and push to `main`:
+
 - **Bandit & CodeQL**: Automated Python AST analysis for security vulnerabilities (injection, insecure deserialization, weak ciphers).
 - **Dependency Auditing**: Automated Dependabot and `npm audit` checking transitive dependencies across Python and TypeScript.
 - **Workflow Permissions**: Least-privilege GitHub Actions tokens (`contents: read`) preventing workflow privilege escalation.
