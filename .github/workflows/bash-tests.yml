@@ -11,6 +11,7 @@ on:
     paths:
       - 'scripts/install/**'
       - 'tests/install/bash/**'
+  workflow_dispatch:
 
 jobs:
   bats:

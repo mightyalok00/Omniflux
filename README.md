@@ -10,6 +10,7 @@
     <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version 1.0.0">
     <img src="https://img.shields.io/badge/python-%3E%3D3.10%2C%3C3.14-blue" alt="Python Versions">
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-green" alt="License"></a>
+    <a href="https://github.com/mightyalok00/Omniflux/actions"><img src="https://img.shields.io/badge/Actions-Run%20Workflow-blue?logo=githubactions&logoColor=white" alt="Run Workflow"></a>
   </p>
 </div>
 
