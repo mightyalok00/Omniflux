@@ -1,0 +1,18 @@
+{
+  "default": true,
+  "MD033": {
+    "allowed_elements": [
+      "div",
+      "p",
+      "a",
+      "img",
+      "i",
+      "b",
+      "h1",
+      "span",
+      "details",
+      "summary"
+    ]
+  },
+  "MD013": false
+}

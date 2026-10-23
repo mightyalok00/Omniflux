@@ -1,16 +1,15 @@
 <div align="center">
-  <img alt="OpenJarvis" src="assets/OpenJarvis_Horizontal_Logo.png" width="400">
+  <img alt="Omniflux" src="assets/OpenJarvis_Horizontal_Logo.png" width="400">
 
-  <p><i>Personal AI, On Personal Devices.</i></p>
+  <h1>Omniflux</h1>
+
+  <p><i>An open-source AI assistant that unifies local and cloud LLMs, intelligent agents, messaging platforms, and workflow automation into one extensible platform.</i></p>
 
   <p>
-    <a href="https://arxiv.org/abs/2605.17172"><img src="https://img.shields.io/badge/arXiv-2605.17172-b31b1b.svg" alt="arXiv"></a>
-    <a href="https://openjarvis.stanford.edu/"><img src="https://img.shields.io/badge/project-OpenJarvis-blue" alt="Project"></a>
-    <a href="https://open-jarvis.github.io/OpenJarvis/"><img src="https://img.shields.io/badge/docs-mkdocs-blue" alt="Docs"></a>
+    <a href="https://github.com/mightyalok00/Omniflux"><img src="https://img.shields.io/badge/project-Omniflux-blue" alt="Project"></a>
     <img src="https://img.shields.io/badge/python-%3E%3D3.10-blue" alt="Python">
     <img src="https://img.shields.io/badge/license-Apache%202.0-green" alt="License">
-    <a href="https://discord.gg/CMVBmDQ5Fj"><img src="https://img.shields.io/badge/discord-join-7289da?logo=discord&logoColor=white" alt="Discord"></a>
-    <a href="https://x.com/OpenJarvisAI"><img src="https://img.shields.io/badge/X-@OpenJarvisAI-black?logo=x&logoColor=white" alt="X / Twitter"></a>
+    <a href="https://github.com/mightyalok00/Omniflux/issues"><img src="https://img.shields.io/github/issues/mightyalok00/Omniflux" alt="Issues"></a>
   </p>
 </div>
 
@@ -129,7 +128,7 @@ Full documentation — including Docker deployment, cloud engines, development s
 
 ## Community
 
-- **GitHub:** [github.com/open-jarvis/OpenJarvis](https://github.com/open-jarvis/OpenJarvis)
+- **GitHub:** [github.com/mightyalok00/Omniflux](https://github.com/mightyalok00/Omniflux)
 - **Discord:** [discord.gg/CMVBmDQ5Fj](https://discord.gg/CMVBmDQ5Fj)
 - **X / Twitter:** [@OpenJarvisAI](https://x.com/OpenJarvisAI)
 - **Docs:** [open-jarvis.github.io/OpenJarvis](https://open-jarvis.github.io/OpenJarvis/)
@@ -141,8 +140,8 @@ We welcome contributions! See the [Contributing Guide](CONTRIBUTING.md) for ince
 Quick start for contributors:
 
 ```bash
-git clone https://github.com/open-jarvis/OpenJarvis.git
-cd OpenJarvis
+git clone https://github.com/mightyalok00/Omniflux.git
+cd Omniflux
 uv sync --extra dev
 uv run pre-commit install
 uv run pytest tests/ -v
