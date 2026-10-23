@@ -42,7 +42,7 @@ OpenJarvis is that stack. It is a framework for local-first personal AI, built a
 Pick your platform and run one command. Each installer handles [uv](https://docs.astral.sh/uv/), the Python venv, Ollama, and a starter model — about 3 minutes on broadband.
 
 | Platform | One-liner |
-|---|---|
+| --- | --- |
 | **macOS · Linux · WSL2** | `curl -fsSL https://open-jarvis.github.io/OpenJarvis/install.sh \| bash` |
 | **Native Windows** | `irm https://open-jarvis.github.io/OpenJarvis/install.ps1 \| iex` |
 | **Desktop GUI** | Download `.exe` / `.dmg` / `.deb` / `.rpm` / `.AppImage` from the [latest release](https://github.com/open-jarvis/OpenJarvis/releases) |
@@ -67,7 +67,7 @@ from the [latest release](https://github.com/open-jarvis/OpenJarvis/releases).
 > Prefix `jarvis ...` with `uv run`, or `source .venv/bin/activate` first.
 
 | Preset | What it does |
-|---|---|
+| --- | --- |
 | `morning-digest-mac` / `morning-digest-linux` / `morning-digest-minimal` | Spoken daily briefing from email, calendar, health, news |
 | `deep-research` | Multi-hop research across indexed docs with citations |
 | `code-assistant` | Agent with code execution, file I/O, and shell access |
@@ -112,7 +112,7 @@ See the [Skills User Guide](https://open-jarvis.github.io/OpenJarvis/user-guide/
 OpenJarvis ships with eight built-in agents across three execution modes (on-demand, scheduled, continuous):
 
 | Agent | Type | What it does |
-|-------|------|-------------|
+| --- | --- | --- |
 | `morning_digest` | Scheduled | Daily briefing from email, calendar, health, news — with TTS audio |
 | `deep_research` | On-demand | Multi-hop research with citations across web and local docs |
 | `monitor_operative` | Continuous | Long-horizon monitoring with memory, compression, and retrieval |
@@ -166,6 +166,7 @@ OpenJarvis is part of [Intelligence Per Watt](https://www.intelligence-per-watt.
 </p>
 
 ## Citation
+
 ```bibtex
 @misc{saadfalcon2026openjarvispersonalaipersonal,
       title={OpenJarvis: Personal AI, On Personal Devices}, 
