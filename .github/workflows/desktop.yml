@@ -263,10 +263,10 @@ jobs:
       - name: Preflight Apple notarization credentials
         if: matrix.platform == 'macos-14'
         env:
-          CERT: ${{ secrets.APPLE_CERTIFICATE }}
-          A_ID: ${{ secrets.APPLE_ID }}
-          A_PASS: ${{ secrets.APPLE_PASSWORD }}
-          A_TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          CERT: ${{ secrets['APPLE_CERTIFICATE'] }}
+          A_ID: ${{ secrets['APPLE_ID'] }}
+          A_PASS: ${{ secrets['APPLE_PASSWORD'] }}
+          A_TEAM: ${{ secrets['APPLE_TEAM_ID'] }}
         shell: bash
         run: |
           set -uo pipefail
@@ -509,12 +509,12 @@ jobs:
       - name: Configure Apple signing
         if: runner.os == 'macOS'
         env:
-          CERT: ${{ secrets.APPLE_CERTIFICATE }}
-          CERT_PASS: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
-          SIGN_ID: ${{ secrets.APPLE_SIGNING_IDENTITY }}
-          A_ID: ${{ secrets.APPLE_ID }}
-          A_PASS: ${{ secrets.APPLE_PASSWORD }}
-          A_TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          CERT: ${{ secrets['APPLE_CERTIFICATE'] }}
+          CERT_PASS: ${{ secrets['APPLE_CERTIFICATE_PASSWORD'] }}
+          SIGN_ID: ${{ secrets['APPLE_SIGNING_IDENTITY'] }}
+          A_ID: ${{ secrets['APPLE_ID'] }}
+          A_PASS: ${{ secrets['APPLE_PASSWORD'] }}
+          A_TEAM: ${{ secrets['APPLE_TEAM_ID'] }}
         shell: bash
         run: |
           if [ -n "$CERT" ]; then
@@ -539,12 +539,12 @@ jobs:
         uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
-          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets['TAURI_SIGNING_PRIVATE_KEY'] }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets['TAURI_SIGNING_PRIVATE_KEY_PASSWORD'] }}
           # tauri-action runs beforeBuildCommand (npm run build:tauri -> vite
           # build), which requires this at build time (#587). Strict for
           # releases: a missing/empty secret fails the build by design.
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets['VITE_SUPABASE_ANON_KEY'] }}
         with:
           projectPath: frontend
           tauriScript: npx tauri
