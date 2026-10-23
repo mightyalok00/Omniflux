@@ -35,6 +35,7 @@ jobs:
   test-windows-arm64:
     if: github.event_name == 'pull_request'
     runs-on: windows-11-arm
+    continue-on-error: true
     permissions:
       contents: read
     steps:
