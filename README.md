@@ -132,21 +132,41 @@ Omniflux includes specialized agents tailored for different workflows:
 
 ## 🔒 Security & Privacy Model
 
-Omniflux is architected with strict boundary isolation:
-1. **Local Isolation**: By default, data and chat history remain stored locally in SQLite (`~/.openjarvis/`) and vector indexes.
-2. **Credential Vault**: Sensitive API tokens (OpenAI, Anthropic, Telegram) are managed through an encrypted credential store rather than plaintext configs.
-3. **Tool Sandboxing**: Code interpreter tools execute within containerized or strict AST-analyzed runtime constraints to guard against arbitrary execution vulnerabilities.
-4. **Rate Limiting & Safety Profiles**: Built-in security profiles (`personal`, `restricted`) govern allowed shell commands, path access, and tool permissions.
+Omniflux enforces verified security boundaries to protect local systems and private data:
+1. **Local Isolation**: Conversation history, semantic vectors, and traces remain in local SQLite databases by default (`~/.openjarvis/`).
+2. **Encrypted Credential Vault**: Sensitive API tokens and keys are encrypted at rest with hardware-backed or key-derived AES protection.
+3. **Execution Sandboxing**: Subprocess tools run inside isolated subprocess environments with AST parsing to eliminate arbitrary code injection risks.
+4. **Adversarial Hardening**: Pre-execution prompt-injection filtering, SSRF IP-range validation, and confidential taint tracking across agent steps.
+
+> See [**SECURITY.md**](SECURITY.md) for full threat modeling, security profiles, and our adversarial test verification matrix.
+
+---
+
+## 🔌 Supported & Verified Integrations
+
+Omniflux is backed by extensive integration and contract test suites covering providers and messaging channels:
+
+| Category | Integration | Status | Test Suite Reference |
+| --- | --- | --- | --- |
+| **Local LLM Engines** | Ollama, vLLM, llama.cpp, Apple MLX | Verified | [`tests/engine/`](tests/engine/) |
+| **Cloud LLM Providers** | Anthropic, OpenAI, Google Gemini, OpenRouter | Verified | [`tests/engine/test_cloud.py`](tests/engine/) |
+| **Messaging Channels** | Telegram, Discord, Slack, WhatsApp, SMS | Verified | [`tests/channels/test_telegram.py`](tests/channels/) |
+| **Data Connectors** | Google Workspace (Gmail, Calendar, Drive), Obsidian | Verified | [`tests/connectors/`](tests/connectors/) |
+| **Agent Execution** | Orchestrator, ReAct, CodeAct, Memory Store | Verified | [`tests/agents/`](tests/agents/) |
+| **Security Auditing** | SSRF, Prompt Injection, Taint Analysis, Sandboxing | Verified | [`tests/security/`](tests/security/) |
 
 ---
 
 ## 🧪 Testing & Quality Assurance
 
-Continuous testing and linting are enforced via GitHub Actions:
+Continuous testing and linting are strictly enforced via GitHub Actions across Linux and Windows:
 
 ```bash
 # Run unit and integration test suite
 pytest tests/ -v
+
+# Run security test suite specifically
+pytest tests/security/ -v
 
 # Run code style and format checks
 ruff check .
